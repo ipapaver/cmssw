@@ -15,9 +15,14 @@ ROOT.PyConfig.IgnoreCommandLineOptions = True
 
 from copy import *
 
-from CMGTools.TTHAnalysis.plotter.cutsFile import *
-from CMGTools.TTHAnalysis.plotter.mcCorrections import *
-from CMGTools.TTHAnalysis.plotter.fakeRate import *
+#from CMGTools.TTHAnalysis.plotter.cutsFile import *
+#from CMGTools.TTHAnalysis.plotter.mcCorrections import *
+#from CMGTools.TTHAnalysis.plotter.fakeRate import *
+
+
+from cutsFile import *
+from mcCorrections import *
+from fakeRate import *
 
 if "/functions_cc.so" not in ROOT.gSystem.GetLibraries(): 
     ROOT.gROOT.ProcessLine(".L %s/src/CMGTools/TTHAnalysis/python/plotter/functions.cc+" % os.environ['CMSSW_BASE']);

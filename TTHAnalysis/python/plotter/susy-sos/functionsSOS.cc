@@ -6,6 +6,8 @@
 // we need to declare the functions we use from functions.cc
 float pt_2(float,float,float,float) ;
 float pt_3(float,float,float,float,float,float) ;
+float pt_4(float, float, float, float , float, float , float, float);
+
 // and we need an empty function
 void functionsSOS() {}
 // and we can check that everything compiles fine with
@@ -28,6 +30,7 @@ float mass_tautau( float Met_Pt, float Met_Phi,  float l1_Pt, float l1_Eta, floa
   if(X0>0.&&X1>0.)return  (T1+T2).M();
   else            return -(T1+T2).M();
 }
+
 
 
 int SR_bins_EWKino(float Mll){
@@ -54,6 +57,33 @@ float metmm_pt(int pdg1, float pt1, float phi1, int pdg2, float pt2, float phi2,
   else return -99;
 }
 
+
+float lepton_Id_selection(int pdg1, int pdg2, int pdg3){
+  cout <<"hkfjgd"<<endl;
+  if (std::abs(pdg1)==13 && std::abs(pdg2)==13 && std::abs(pdg3) ==13) return 123;
+  else if (std::abs(pdg1)==13 && std::abs(pdg2)==13 && !(std::abs(pdg3)==13))return 12; 
+  else if (std::abs(pdg1)==13 && !(std::abs(pdg2)==13) && std::abs(pdg3) == 13)return 13; 
+  else if (!(std::abs(pdg1)==13) && std::abs(pdg2)==13 && std::abs(pdg3)==13)return 23;
+  else if (std::abs(pdg1)==13 && !(std::abs(pdg2)==13) && !(std::abs(pdg3)==13))return 1;
+  else if (!(std::abs(pdg1)==13) && std::abs(pdg2)==13 && !(std::abs(pdg3)==13)) return 2;  
+  else if (!(std::abs(pdg1)==13) && !(std::abs(pdg2)==13) && (std::abs(pdg3)==13))return 3;
+  else if (!(std::abs(pdg1)==13) && !(std::abs(pdg2)==13) && !(std::abs(pdg3)==13)) return 4;
+  else return -99;
+  }
+
+
+
+float metmmm_pt( float pt1, float phi1, float pt2, float phi2, float pt3, float phi3, float metpt, float metphi, float lepton_code) {
+  if (lepton_code == 123)  return pt_4(pt1, phi1, pt2, phi2, pt3, phi3, metpt, metphi);
+  else if (lepton_code == 12) return pt_3(pt1,phi1,pt2,phi2,metpt,metphi);
+  else if (lepton_code == 13) return pt_3(pt1, phi1, pt3, phi3, metpt, metphi);
+  else if (lepton_code == 23) return pt_3(pt2, phi2, pt3, phi3, metpt, metphi);
+  else if (lepton_code == 1) return pt_2(pt1, phi1, metpt, metphi);
+  else if (lepton_code == 2) return pt_2(pt2,phi2,metpt,metphi);  
+  else if (lepton_code == 3) return pt_2(pt3,phi3, metpt, metphi);
+  else if (lepton_code == 4) return metpt;
+ else return -99;
+}
 
 
 float eleWPVVL(float pt, float etaSc, float mva){

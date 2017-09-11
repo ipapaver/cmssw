@@ -69,7 +69,7 @@ def effFromH2D(h2d,options,uncertainties="CP"):
         elif uncertainties == "PF":
             err = hypot(yfail * ypassErr, ypass * yfailErr)/(yall*yall)
             errs = [ -err, err ]
-        #print h2d.GetName(), xval, ypass, ypassErr, yfail, yfailErr, eff, neff, eff*neff, (1-eff)*neff, errs
+        print h2d.GetName(), xval, ypass, ypassErr, yfail, yfailErr, eff, neff, eff*neff, (1-eff)*neff, errs
         points.append( (xval, xerrs, eff, errs) )
     if not points: return None
     ret = ROOT.TGraphAsymmErrors(len(points))

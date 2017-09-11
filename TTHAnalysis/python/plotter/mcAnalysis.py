@@ -1,9 +1,14 @@
 #!/usr/bin/env python
 #from tree2yield import *
-from CMGTools.TTHAnalysis.plotter.tree2yield import *
-from CMGTools.TTHAnalysis.plotter.projections import *
-from CMGTools.TTHAnalysis.plotter.figuresOfMerit import FOM_BY_NAME
+#from CMGTools.TTHAnalysis.plotter.tree2yield import *
+#from CMGTools.TTHAnalysis.plotter.projections import *
+#from CMGTools.TTHAnalysis.plotter.figuresOfMerit import FOM_BY_NAME
+from tree2yield import *
+from projections import *
+from figuresOfMerit import FOM_BY_NAME
 import pickle, re, random, time
+import pdb 
+
 
 #_T0 = long(ROOT.gSystem.Now())
 
@@ -103,6 +108,9 @@ class MCAnalysis:
                 self.readMca(extra['IncludeMca'],options) # call readMca recursively on included mca files
                 continue
             ## If we have a selection of process names, apply it
+            
+            # pdb.set_trace()
+
             skipMe = (len(options.processes) > 0)
             for p0 in options.processes:
                 for p in p0.split(","):
@@ -126,10 +134,15 @@ class MCAnalysis:
                 objname  = extra["ObjName"]  if "ObjName"  in extra else options.obj
 
                 basepath = None
+		
+		#pdb.set_trace()
+
                 for treepath in options.path:
                     if os.path.exists(treepath+"/"+cname):
                         basepath = treepath
                         break
+		
+
                 if not basepath:
                     raise RuntimeError("%s -- ERROR: %s process not found in paths (%s)" % (__name__, cname, repr(options.path)))
 
