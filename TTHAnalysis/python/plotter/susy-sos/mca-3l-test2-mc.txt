@@ -1,36 +1,6 @@
 #---- SUSY signal points from new Scan
 
-#TChiWZ_150_dM7+ : TChiWZ_150_143  : 0.001*0.1*5180.86: LepGood1_mcMatchId!=0 && LepGood2_mcMatchId!=0 && LepGood3_mcMatchId!=0  ;FillColor=ROOT.kOrange-3, Label="TChi150/7", Friends=[('sf/t'\,'{P}/0_eventBTagWeightFS_v1/evVarFriend_{cname}.root')], isFastSim
-
-#TChiWZ_150_dM20+ : TChiWZ_150_130  : 0.001*0.1*5180.86: LepGood1_mcMatchId!=0 && LepGood2_mcMatchId!=0 && LepGood3_mcMatchId!=0 ;FillColor=ROOT.kRed+1, Label="TChi150/20", Friends=[('sf/t'\,'{P}/0_eventBTagWeightFS_v1/evVarFriend_{cname}.root')], isFastSim 
-
-#TChiWZ_150_110: TChiWZ_150_110: 0.001*0.1*5180.86: LepGood1_mcMatchId!=0 && LepGood2_mcMatchId!=0 && LepGood3_mcMatchId!=0  ;FillColor=ROOT.kBlue-4, Label="TChi150/40",Friends=[('sf/t'\,'{P}/0_eventBTagWeightFS_v1/evVarFriend_{cname}.root')], isFastSim 
-
-#TChiWZ_225_218+ :  TChiWZ_225_218  : 0.001*0.1*1165.09 :  LepGood1_mcMatchId!=0 && LepGood2_mcMatchId!=0 && LepGood3_mcMatchId!=0  ;FillColor=ROOT.kRed-4, Label="TChi225/7",Friends=[('sf/t'\,'{P}/0_eventBTagWeightFS_v1/evVarFriend_{cname}.root')], isFastSim
-
-#TChiWZ_225_215+ :  TChiWZ_225_215  : 0.001*0.1*1165.09 :  LepGood1_mcMatchId!=0 && LepGood2_mcMatchId!=0 && LepGood3_mcMatchId!=0  ;FillColor=ROOT.kBlue+4, Label="TChi225/10",Friends=[('sf/t'\,'{P}/0_eventBTagWeightFS_v1/evVarFriend_{cname}.root')], isFastSim
-
-TChiWZ_225_205+ :  TChiWZ_225_205  : 0.001*0.1*1165.09 :  LepGood1_mcMatchId!=0 && LepGood2_mcMatchId!=0 && LepGood3_mcMatchId!=0  ;FillColor=ROOT.kRed+1, Label="TChi225/20",Friends=[('sf/t'\,'{P}/0_eventBTagWeightFS_v1/evVarFriend_{cname}.root')], isFastSim 
- 
-#TChiWZ_225_195+ :  TChiWZ_225_195  : 0.001*0.1*1165.09 :  LepGood1_mcMatchId!=0 && LepGood2_mcMatchId!=0 && LepGood3_mcMatchId!=0  ;FillColor=ROOT.kRed-9, Label="TChi225/30",Friends=[('sf/t'\,'{P}/0_eventBTagWeightFS_v1/evVarFriend_{cname}.root')], isFastSim 
-
-#TChiWZ_200_193 :  TChiWZ_200_193  : 0.001*0.1*1807.39 :  LepGood1_mcMatchId!=0 && LepGood2_mcMatchId!=0 && LepGood3_mcMatchId!=0  ;FillColor=ROOT.kRed-4, Label="TChi200/7",Friends=[('sf/t'\,'{P}/0_eventBTagWeightFS_v1/evVarFriend_{cname}.root')], isFastSim
-
-#TChiWZ_200_190 :  TChiWZ_200_190  : 0.001*0.1*1807.39 :  LepGood1_mcMatchId!=0 && LepGood2_mcMatchId!=0 && LepGood3_mcMatchId!=0  ;FillColor=ROOT.kBlue+4, Label="TChi200/10",Friends=[('sf/t'\,'{P}/0_eventBTagWeightFS_v1/evVarFriend_{cname}.root')], isFastSim
-
-#TChiWZ_200_180 :  TChiWZ_200_180  : 0.001*0.1*1807.39 :  LepGood1_mcMatchId!=0 && LepGood2_mcMatchId!=0 && LepGood3_mcMatchId!=0  ;FillColor=ROOT.kYellow+2, Label="TChi200/20",Friends=[('sf/t'\,'{P}/0_eventBTagWeightFS_v1/evVarFriend_{cname}.root')], isFastSim
-
-#TChiWZ_200_170 :  TChiWZ_200_170  : 0.001*0.1*1807.39 :  LepGood1_mcMatchId!=0 && LepGood2_mcMatchId!=0 && LepGood3_mcMatchId!=0  ;FillColor=ROOT.kRed-9, Label="TChi200/30",Friends=[('sf/t'\,'{P}/0_eventBTagWeightFS_v1/evVarFriend_{cname}.root')], isFastSim
-
-#TChiWZ_250_243 :  TChiWZ_250_243  : 0.001*0.1*782.487 :  LepGood1_mcMatchId!=0 && LepGood2_mcMatchId!=0 && LepGood3_mcMatchId!=0  ;FillColor=ROOT.kRed-4, Label="TChi250/7",Friends=[('sf/t'\,'{P}/0_eventBTagWeightFS_v1/evVarFriend_{cname}.root')], isFastSim
-
-#TChiWZ_250_240 :  TChiWZ_250_240  : 0.001*0.1*782.487 :  LepGood1_mcMatchId!=0 && LepGood2_mcMatchId!=0 && LepGood3_mcMatchId!=0  ;FillColor=ROOT.kBlue+4, Label="TChi250/10",Friends=[('sf/t'\,'{P}/0_eventBTagWeightFS_v1/evVarFriend_{cname}.root')], isFastSim
-
-#TChiWZ_250_230 :  TChiWZ_250_230  : 0.001*0.1*782.487 :  LepGood1_mcMatchId!=0 && LepGood2_mcMatchId!=0 && LepGood3_mcMatchId!=0  ;FillColor=ROOT.kYellow+2, Label="TChi250/20",Friends=[('sf/t'\,'{P}/0_eventBTagWeightFS_v1/evVarFriend_{cname}.root')], isFastSim
-
-#TChiWZ_250_220 :  TChiWZ_250_220  : 0.001*0.1*782.487 :  LepGood1_mcMatchId!=0 && LepGood2_mcMatchId!=0 && LepGood3_mcMatchId!=0  ;FillColor=ROOT.kRed-9,, Label="TChi250/30",Friends=[('sf/t'\,'{P}/0_eventBTagWeightFS_v1/evVarFriend_{cname}.root')], isFastSim
-
-#TChiWZ_275_245 : TChiWZ_275_245 : 0.001*0.1*543.03 : 0.001*0.1*782.487 :  LepGood1_mcMatchId!=0 && LepGood2_mcMatchId!=0 && LepGood3_mcMatchId!=0  ;FillColor=ROOT.kBlue-4, Label="TChi275/30",Friends=[('sf/t'\,'{P}/0_eventBTagWeightFS_v1/evVarFriend_{cname}.root')], isFastSim
+TChiWZ_225_dM20+  :  TChiWZ_225_205  : 0.001*0.1*1165.09 : bTagWeightFS*(LepGood1_mcMatchId!=0 && LepGood2_mcMatchId!=0 && LepGood3_mcMatchId!=0 && Sum$(abs(Jet_eta)<2.5 && Jet_chHEF<0.1  && Jet_mcPt<8)==0) ;FillColor=ROOT.kRed+1, Label="TChi225/20",Friends=[('sf/t'\,'{P}/0_eventBTagWeightFS_v1/evVarFriend_{cname}.root')], isFastSim 
 
 
 # ---- Diboson - Including internal conversions (VV* mll<4 GeV)

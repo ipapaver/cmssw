@@ -391,6 +391,7 @@ if not skipT1METCorr:
 
 
 #ISR jet collection
+
 if analysis=='SOS' and not runData:
     from CMGTools.TTHAnalysis.analyzers.nIsrAnalyzer import NIsrAnalyzer
     nIsrAnalyzer = cfg.Analyzer(
@@ -493,8 +494,6 @@ elif analysis=='SOS':
     configureSplittingFromTime(samples_mainBkg,50,3)
     configureSplittingFromTime(samples_rareBkg,100,3)
     cropToLumi([WWW, WZZ, WWZ, ZZZ, WWToLNuQQ, WZTo1L3Nu, WZTo1L1Nu2Q, ZZTo2L2Q, TTWToLNu_ext, TTZToLLNuNu_ext, TTZToLLNuNu_m1to10],200)
-
-    
 
 elif analysis=="ttH":
     selectedComponents = selectedComponents

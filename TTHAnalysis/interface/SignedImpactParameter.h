@@ -29,6 +29,8 @@ class SignedImpactParameter {
         Measurement1D IP2D(const reco::Track &tk, const reco::VertexCompositePtrCandidate &vtx) const ;
 
         std::pair<double,double> twoTrackChi2(const reco::Track &tk1, const reco::Track &tk2) const ;
+        std::pair<double,double> twoTrackDist(const reco::Track &tk1, const reco::Track &tk2, const reco::Vertex &pv) const ;
+        std::vector<double> twoTrackVert(const reco::Track &tk1, const reco::Track &tk2, const reco::Vertex &pv) const ;
 
         //For the vertex related variables
         //A = selectedLeptons[0], B = selectedLeptons[1], C = selectedLeptons[2], D = selectedLeptons[3]
@@ -45,8 +47,8 @@ class SignedImpactParameter {
         std::pair<double,double> absIP3D(const reco::Track &trk, const reco::Vertex &pv) const;
         //Of one lepton w.r.t. the PV of the PV of the other leptons only
         std::pair<double,double> absIP3Dtrkpvtrks(const reco::Track &trkA, const reco::Track &trkB, const reco::Track &trkC, const reco::Track &trkD, int nlep, int iptrk) const;
-       //Variables related to chi2
-       std::pair<double,double> chi2pvtrks(const reco::Track &trkA, const reco::Track &trkB, const reco::Track &trkC, const reco::Track &trkD, int nlep) const;
+        //Variables related to chi2
+        std::pair<double,double> chi2pvtrks(const reco::Track &trkA, const reco::Track &trkB, const reco::Track &trkC, const reco::Track &trkD, int nlep) const;
 
         Measurement1D vertexD3d(const reco::VertexCompositePtrCandidate &sv, const reco::Vertex &pv) const ;
         Measurement1D vertexDxy(const reco::VertexCompositePtrCandidate &sv, const reco::Vertex &pv) const ;

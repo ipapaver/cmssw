@@ -110,6 +110,64 @@ SignedImpactParameter::twoTrackChi2(const reco::Track &tk1, const reco::Track &t
     return std::make_pair(myVertex.totalChiSquared(),myVertex.degreesOfFreedom());  
 }
 
+
+std::pair<double,double>
+SignedImpactParameter::twoTrackDist(const reco::Track &tk1, const reco::Track &tk2,const reco::Vertex &pv) const {
+    if (paramField_ == 0) paramField_ = new OAEParametrizedMagneticField("3_8T");
+    std::vector<reco::TransientTrack> ttks;
+    ttks.push_back(reco::TransientTrack(tk1,paramField_));
+    ttks.push_back(reco::TransientTrack(tk2,paramField_));
+    KalmanVertexFitter vtxFitter;
+    TransientVertex myVertex = vtxFitter.vertex(ttks);
+    //I'm here assuming that the TransientVertex behaves as a Vertex
+    VertexDistance3D dist;
+    return std::make_pair(dist.distance(myVertex, pv).significance(),dist.distance(myVertex, pv).error());  
+}
+
+
+
+std::vector<double>
+SignedImpactParameter::twoTrackVert(const reco::Track &tk1, const reco::Track &tk2,const reco::Vertex &pv) const {
+    if (paramField_ == 0) paramField_ = new OAEParametrizedMagneticField("3_8T");
+    std::vector<reco::TransientTrack> ttks;
+    ttks.push_back(reco::TransientTrack(tk1,paramField_));
+    ttks.push_back(reco::TransientTrack(tk2,paramField_));
+    KalmanVertexFitter vtxFitter;
+    TransientVertex myVertex = vtxFitter.vertex(ttks);
+    //I'm here assuming that the TransientVertex behaves as a Vertex
+    VertexDistance3D dist;
+    std::vector<double> vtxprop; 
+    if (myVertex.isValid()){
+	vtxprop.push_back(myVertex.totalChiSquared());
+	vtxprop.push_back(myVertex.degreesOfFreedom());
+	vtxprop.push_back(dist.distance(myVertex, pv).significance());
+	vtxprop.push_back(dist.distance(myVertex, pv).error()); 
+	vtxprop.push_back(myVertex.position().x());
+	vtxprop.push_back(myVertex.position().y());
+	vtxprop.push_back(myVertex.position().z());
+	vtxprop.push_back(sqrt(myVertex.positionError().cxx()));
+	vtxprop.push_back(sqrt(myVertex.positionError().cyy()));
+	vtxprop.push_back(sqrt(myVertex.positionError().czz()));
+
+      } 
+    else {
+      vtxprop.push_back(-1);
+      vtxprop.push_back(-1);
+      vtxprop.push_back(-1);
+      vtxprop.push_back(-1);
+      vtxprop.push_back(-1);
+      vtxprop.push_back(-1);
+      vtxprop.push_back(-1);
+      vtxprop.push_back(-1);
+      vtxprop.push_back(-1);
+      vtxprop.push_back(-1);
+
+    }
+    return vtxprop;  
+}
+
+
+
 //Helping functions
 std::vector<reco::TransientTrack> SignedImpactParameter::ttrksf(const reco::Track &trkA, const reco::Track &trkB, const reco::Track &trkC, const reco::Track &trkD, int nlep) const {
   std::vector<reco::TransientTrack> ttrks;

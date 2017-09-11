@@ -54,12 +54,15 @@ float metmm_pt(int pdg1, float pt1, float phi1, int pdg2, float pt2, float phi2,
   else if (std::abs(pdg1)==13 && !(std::abs(pdg2)==13)) return pt_2(pt1,phi1,metpt,metphi);
   else if (!(std::abs(pdg1)==13) && std::abs(pdg2)==13) return pt_2(pt2,phi2,metpt,metphi);
   else if (!(std::abs(pdg1)==13) && !(std::abs(pdg2)==13)) return metpt;
-  else return -99;
+  else {
+    std::cout << "Error in metmm_pt" << std::endl;
+    return -99;
+  }
 }
 
 
 float lepton_Id_selection(int pdg1, int pdg2, int pdg3){
-  cout <<"hkfjgd"<<endl;
+
   if (std::abs(pdg1)==13 && std::abs(pdg2)==13 && std::abs(pdg3) ==13) return 123;
   else if (std::abs(pdg1)==13 && std::abs(pdg2)==13 && !(std::abs(pdg3)==13))return 12; 
   else if (std::abs(pdg1)==13 && !(std::abs(pdg2)==13) && std::abs(pdg3) == 13)return 13; 
@@ -68,12 +71,18 @@ float lepton_Id_selection(int pdg1, int pdg2, int pdg3){
   else if (!(std::abs(pdg1)==13) && std::abs(pdg2)==13 && !(std::abs(pdg3)==13)) return 2;  
   else if (!(std::abs(pdg1)==13) && !(std::abs(pdg2)==13) && (std::abs(pdg3)==13))return 3;
   else if (!(std::abs(pdg1)==13) && !(std::abs(pdg2)==13) && !(std::abs(pdg3)==13)) return 4;
-  else return -99;
+
+  else {
+    std::cout << "Error in lepton_Id_selection" << std::endl;
+    return -99;
+  }
+
   }
 
 
 
-float metmmm_pt( float pt1, float phi1, float pt2, float phi2, float pt3, float phi3, float metpt, float metphi, float lepton_code) {
+float metmmm_pt( float pt1, float phi1, float pt2, float phi2, float pt3, float phi3, float metpt, float metphi, int lepton_code) {
+
   if (lepton_code == 123)  return pt_4(pt1, phi1, pt2, phi2, pt3, phi3, metpt, metphi);
   else if (lepton_code == 12) return pt_3(pt1,phi1,pt2,phi2,metpt,metphi);
   else if (lepton_code == 13) return pt_3(pt1, phi1, pt3, phi3, metpt, metphi);
@@ -82,7 +91,14 @@ float metmmm_pt( float pt1, float phi1, float pt2, float phi2, float pt3, float 
   else if (lepton_code == 2) return pt_2(pt2,phi2,metpt,metphi);  
   else if (lepton_code == 3) return pt_2(pt3,phi3, metpt, metphi);
   else if (lepton_code == 4) return metpt;
- else return -99;
+
+
+=
+  else {
+    std::cout << "Error in metmmm_pt" << std::endl;
+    return -99;
+  }
+
 }
 
 

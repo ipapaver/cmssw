@@ -144,18 +144,30 @@ T6qqWW = [ ]
 
 ##Higgsino
 ## ------------------------------------------------------
-Higgsino_300_120=kreator.makeMCComponentFromLocal("Higgsino_300_120","/higgsino_300_120_v5/","/afs/cern.ch/work/b/bschneid/public/higgsino-points/%s",".*root")
-Higgsino_300_80=kreator.makeMCComponentFromLocal("Higgsino_300_80","/higgsino_300_80_v5/","/afs/cern.ch/work/b/bschneid/public/higgsino-points/%s",".*root")
-Higgsino_500_120=kreator.makeMCComponentFromLocal("Higgsino_500_120","higgsino_500_120_v5","/afs/cern.ch/work/b/bschneid/public/higgsino-points/%s",".*root")
-Higgsino_500_80=kreator.makeMCComponentFromLocal("Higgsino_500_80","higgsino_500_80_v5","/afs/cern.ch/work/b/bschneid/public/higgsino-points/%s",".*root")
-Higgsino = [Higgsino_300_120, Higgsino_300_80, Higgsino_500_120, Higgsino_500_80]
+#Higgsino_300_120=kreator.makeMCComponentFromLocal("Higgsino_300_120","/higgsino_300_120_v5/","/afs/cern.ch/work/b/bschneid/public/higgsino-points/%s",".*root")
+#Higgsino_300_80=kreator.makeMCComponentFromLocal("Higgsino_300_80","/higgsino_300_80_v5/","/afs/cern.ch/work/b/bschneid/public/higgsino-points/%s",".*root")
+#Higgsino_500_120=kreator.makeMCComponentFromLocal("Higgsino_500_120","higgsino_500_120_v5","/afs/cern.ch/work/b/bschneid/public/higgsino-points/%s",".*root")
+#Higgsino_500_80=kreator.makeMCComponentFromLocal("Higgsino_500_80","higgsino_500_80_v5","/afs/cern.ch/work/b/bschneid/public/higgsino-points/%s",".*root")
+Higgsino = [] #Higgsino_300_120, Higgsino_300_80, Higgsino_500_120, Higgsino_500_80]
 
-
-
+##Displaced
+Displaced_C1N2_200_dM5_ctau_05 = kreator.makeMCComponentFromEOS("Displaced_C1N2_200_dM5_ctau_05","/TChiWZToLL_Displaced_mC1mN2_200.0_mN1_195.0_ctau_0.5/","/store/cmst3/group/susy/peruzzi/TChiWZToLL_Displaced/%s",".*root",1)
+Displaced_C1N2_200_dM5_ctau_1 = kreator.makeMCComponentFromEOS("Displaced_C1N2_200_dM5_ctau_1","/TChiWZToLL_Displaced_mC1mN2_200.0_mN1_195.0_ctau_1.0/","/store/cmst3/group/susy/peruzzi/TChiWZToLL_Displaced/%s",".*root",1)
+Displaced_C1N2_200_dM5_ctau_5 = kreator.makeMCComponentFromEOS("Displaced_C1N2_200_dM5_ctau_5","/TChiWZToLL_Displaced_mC1mN2_200.0_mN1_195.0_ctau_5.0/","/store/cmst3/group/susy/peruzzi/TChiWZToLL_Displaced/%s",".*root",1)
+Displaced_C1N2_200_dM3_ctau_01 = kreator.makeMCComponentFromEOS("Displaced_C1N2_200_dM3_ctau_01","/TChiWZToLL_Displaced_mC1mN2_200.0_mN1_197.0_ctau_0.1/","/store/cmst3/group/susy/peruzzi/TChiWZToLL_Displaced/%s",".*root",1)
+Displaced_C1N2_200_dM3_ctau_05 = kreator.makeMCComponentFromEOS("Displaced_C1N2_200_dM3_ctau_05","/TChiWZToLL_Displaced_mC1mN2_200.0_mN1_197.0_ctau_0.5/","/store/cmst3/group/susy/peruzzi/TChiWZToLL_Displaced/%s",".*root",1)
+Displaced_C1N2_200_dM3_ctau_1 = kreator.makeMCComponentFromEOS("Displaced_C1N2_200_dM3_ctau_1","/TChiWZToLL_Displaced_mC1mN2_200.0_mN1_197.0_ctau_1.0/","/store/cmst3/group/susy/peruzzi/TChiWZToLL_Displaced/%s",".*root",1)
+Displaced_C1N2_200_dM3_ctau_5 = kreator.makeMCComponentFromEOS("Displaced_C1N2_200_dM3_ctau_5","/TChiWZToLL_Displaced_mC1mN2_200.0_mN1_197.0_ctau_5.0/","/store/cmst3/group/susy/peruzzi/TChiWZToLL_Displaced/%s",".*root",1)
+Displaced_C1N2_200_dM1_ctau_01 = kreator.makeMCComponentFromEOS("Displaced_C1N2_200_dM1_ctau_01","/TChiWZToLL_Displaced_mC1mN2_200.0_mN1_199.0_ctau_0.1/","/store/cmst3/group/susy/peruzzi/TChiWZToLL_Displaced/%s",".*root",1)
+Displaced_C1N2_200_dM1_ctau_05 = kreator.makeMCComponentFromEOS("Displaced_C1N2_200_dM1_ctau_05","/TChiWZToLL_Displaced_mC1mN2_200.0_mN1_199.0_ctau_0.5/","/store/cmst3/group/susy/peruzzi/TChiWZToLL_Displaced/%s",".*root",1)
+Displaced_C1N2_200_dM1_ctau_1 = kreator.makeMCComponentFromEOS("Displaced_C1N2_200_dM1_ctau_1","/TChiWZToLL_Displaced_mC1mN2_200.0_mN1_199.0_ctau_1.0/","/store/cmst3/group/susy/peruzzi/TChiWZToLL_Displaced/%s",".*root",1)
+Displaced_C1N2_200_dM1_ctau_5 = kreator.makeMCComponentFromEOS("Displaced_C1N2_200_dM1_ctau_5","/TChiWZToLL_Displaced_mC1mN2_200.0_mN1_199.0_ctau_5.0/","/store/cmst3/group/susy/peruzzi/TChiWZToLL_Displaced/%s",".*root",1)
+Displaced_C1N2_200_dM5_ctau_01 = kreator.makeMCComponentFromEOS("Displaced_C1N2_200_dM5_ctau_01","/TChiWZToLL_Displaced_mC1mN2_200.0_mN1_195.0_ctau_0.1/","/store/cmst3/group/susy/peruzzi/TChiWZToLL_Displaced/%s",".*root",1)
+Displaced = [Displaced_C1N2_200_dM5_ctau_05, Displaced_C1N2_200_dM5_ctau_1, Displaced_C1N2_200_dM5_ctau_5, Displaced_C1N2_200_dM3_ctau_01, Displaced_C1N2_200_dM3_ctau_05, Displaced_C1N2_200_dM3_ctau_1, Displaced_C1N2_200_dM3_ctau_5, Displaced_C1N2_200_dM1_ctau_01, Displaced_C1N2_200_dM1_ctau_05, Displaced_C1N2_200_dM1_ctau_1, Displaced_C1N2_200_dM1_ctau_5, Displaced_C1N2_200_dM5_ctau_01]
 
 ## mcSamplesPriv
 ## ------------------------------------------------------
-mcSamplesPriv = SqGltttt + T1ttbb + T1ttbbWW + T1tttt + T2tt + T2ttDeg + T2cc + T5qqqqVV + T5qqqqVVDeg + T5ttttDeg + T6ttWW + T6qqWW + Higgsino
+mcSamplesPriv = SqGltttt + T1ttbb + T1ttbbWW + T1tttt + T2tt + T2ttDeg + T2cc + T5qqqqVV + T5qqqqVVDeg + T5ttttDeg + T6ttWW + T6qqWW + Higgsino + Displaced
 
 
 

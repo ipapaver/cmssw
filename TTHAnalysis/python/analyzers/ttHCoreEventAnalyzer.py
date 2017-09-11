@@ -333,7 +333,11 @@ class ttHCoreEventAnalyzer( Analyzer ):
         #For the vertex related variables 
         #A = selectedLeptons[0], B = selectedLeptons[1], C = selectedLeptons[2], D = selectedLeptons[3] 
         nlep = len(event.selectedLeptons)
-        
+
+        ##Variables of the vertex of the first two leptons
+        event.twoLepVertChi2 = twoTrackChi2(event.selectedLeptons[0],event.selectedLeptons[1]) if nlep > 1 else (-1,-1)  
+        event.twoLepVert = twoTrackVert(event.selectedLeptons[0],event.selectedLeptons[1],event.goodVertices[0] if len(event.goodVertices)>0 else event.vertices[0]) if nlep > 1 else (-1,-1)  
+
         ##Variables related to IP
         #Of one lepton w.r.t. the PV of the event
         event.absIP3DA = absIP3D(event.selectedLeptons[0],event.goodVertices[0] if len(event.goodVertices)>0 else event.vertices[0]) if nlep > 0 else (-1,-1)  

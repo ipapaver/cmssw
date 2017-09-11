@@ -85,15 +85,29 @@ def maxSip2Djettracks(lepton, vertex=None):
 
 
 
-
-
-
-
 def twoTrackChi2(lepton1,lepton2):
     track1 = lepton1.gsfTrack() if abs(lepton1.pdgId()) == 11  else lepton1.track()
     track2 = lepton2.gsfTrack() if abs(lepton2.pdgId()) == 11  else lepton2.track()
     pair = SignedImpactParameterComputer.twoTrackChi2(track1.get(),track2.get())
     return (pair.first,pair.second)
+def twoTrackDist(lepton1,lepton2,pv=None):
+    if pv is None:
+        pv = lepton1.associatedVertex
+    track1 = lepton1.gsfTrack() if abs(lepton1.pdgId()) == 11  else lepton1.track()
+    track2 = lepton2.gsfTrack() if abs(lepton2.pdgId()) == 11  else lepton2.track()
+    pair = SignedImpactParameterComputer.twoTrackDist(track1.get(),track2.get(),pv)
+    return (pair.first,pair.second)
+def twoTrackVert(lepton1,lepton2,pv=None):
+    if pv is None:
+        pv = lepton1.associatedVertex
+    track1 = lepton1.gsfTrack() if abs(lepton1.pdgId()) == 11  else lepton1.track()
+    track2 = lepton2.gsfTrack() if abs(lepton2.pdgId()) == 11  else lepton2.track()
+    vtxprop = SignedImpactParameterComputer.twoTrackVert(track1.get(),track2.get(),pv)
+    return vtxprop
+
+
+
+
 
 #For the vertex related variables
 #A = selectedLeptons[0], B = selectedLeptons[1], C = selectedLeptons[2], D = selectedLeptons[3] 

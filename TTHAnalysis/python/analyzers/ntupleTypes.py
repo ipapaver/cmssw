@@ -77,6 +77,13 @@ leptonTypeSusyExtraLight = NTupleObjectType("leptonSusyExtraLight", baseObjectTy
     ##NTupleVariable("etaSc", lambda x : x.superCluster().eta(), help="Photon supercluster pseudorapidity"), # already in leptonExtra
     NTupleVariable("energySc", lambda x : x.superCluster().energy() if abs(x.pdgId())==11 else -100, help="Electron supercluster pseudorapidity"),
 
+    # Lepton's vertex
+    NTupleVariable("vx", lambda lepton : lepton.vx(), help="lepton's vertex position (x)"),
+    NTupleVariable("vy", lambda lepton : lepton.vy(), help="lepton's vertex position (y)"),
+    NTupleVariable("vz", lambda lepton : lepton.vz(), help="lepton's vertex position (z)"),
+    NTupleVariable("mcvx",   lambda x : x.mcLep.vx() if getattr(x,"mcLep",None) else -99., mcOnly=True, help="vertex position (x) of associated gen lepton"),
+    NTupleVariable("mcvy",   lambda x : x.mcLep.vy() if getattr(x,"mcLep",None) else -99., mcOnly=True, help="vertex position (y) of associated gen lepton"),
+    NTupleVariable("mcvz",   lambda x : x.mcLep.vz() if getattr(x,"mcLep",None) else -99., mcOnly=True, help="vertex position (z) of associated gen lepton"),
 
 ])
 leptonTypeSusyExtraLight.addSubObjects([

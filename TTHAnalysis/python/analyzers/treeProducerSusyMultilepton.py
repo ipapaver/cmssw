@@ -81,7 +81,33 @@ susyMultilepton_globalVariables = susyCore_globalVariables + [
             NTupleVariable("GenHiggsDecayMode", lambda ev : ev.genHiggsDecayMode, int, mcOnly=True, help="H decay mode (15 = tau, 23/24 = W/Z)"),
             #NTupleVariable("LepEff_3lep", lambda ev : ev.LepEff_3lep, mcOnly=True, help="Lepton preselection SF (3 lep)"),
             #NTupleVariable("LepEff_4lep", lambda ev : ev.LepEff_4lep, mcOnly=True, help="Lepton preselection SF (4 lep)"),
-#            ##--------vertex variables------------------------------------------
+            
+            ##--------displaced vertex variables------------------------------------------
+            #NTupleVariable("twoLepVertChi2old", lambda ev: ev.twoLepVertChi2[0], help="Chi2 of the re-fitted vtx out of the two lepton tracks"),
+            #NTupleVariable("twoLepVertDOFold", lambda ev: ev.twoLepVertChi2[1], help="DOF of the re-fitted vtx out of the two lepton tracks"),
+            NTupleVariable("twoLepVertChi2", lambda ev: ev.twoLepVert[0], help="Chi2 of the re-fitted vtx out of the two lepton tracks"),
+            NTupleVariable("twoLepVertDOF", lambda ev: ev.twoLepVert[1], help="DOF of the re-fitted vtx out of the two lepton tracks"),
+            NTupleVariable("twoLepVertSigPV", lambda ev: ev.twoLepVert[2], help="3D significance of refitted vtx with respect to PV"),
+            NTupleVariable("twoLepVertErrPV", lambda ev: ev.twoLepVert[3], help="3D distance error of refitted vtx with respect to PV"),
+            NTupleVariable("twoLepVertXpos", lambda ev: ev.twoLepVert[4], help="X position of the re-fitted vtx out of the two lepton tracks"),
+            NTupleVariable("twoLepVertYpos", lambda ev: ev.twoLepVert[5], help="Y position of the re-fitted vtx out of the two lepton tracks"),
+            NTupleVariable("twoLepVertZpos", lambda ev: ev.twoLepVert[6], help="Z position of the re-fitted vtx out of the two lepton tracks"),
+            NTupleVariable("twoLepVertXerrPos", lambda ev: ev.twoLepVert[7], help="X position error of the re-fitted vtx out of the two lepton tracks"),
+            NTupleVariable("twoLepVertYerrPos", lambda ev: ev.twoLepVert[8], help="Y position error of the re-fitted vtx out of the two lepton tracks"),
+            NTupleVariable("twoLepVertZerrPos", lambda ev: ev.twoLepVert[9], help="Z position error of the re-fitted vtx out of the two lepton tracks"),
+
+            ##------primary vertex------------------------------------------
+            NTupleVariable("pvXpos", lambda ev: ev.goodVertices[0].x() if len(ev.goodVertices)>0 else ev.vertices[0].x(), help="X position of the PV"),
+            NTupleVariable("pvYpos", lambda ev: ev.goodVertices[0].y() if len(ev.goodVertices)>0 else ev.vertices[0].y(), help="Y position of the PV"),
+            NTupleVariable("pvZpos", lambda ev: ev.goodVertices[0].z() if len(ev.goodVertices)>0 else ev.vertices[0].z(), help="Z position of the PV"),
+            NTupleVariable("pvXerrPos", lambda ev: ev.goodVertices[0].xError() if len(ev.goodVertices)>0 else ev.vertices[0].xError(), help="X position error of the PV"),
+            NTupleVariable("pvYerrPos", lambda ev: ev.goodVertices[0].yError() if len(ev.goodVertices)>0 else ev.vertices[0].yError(), help="Y position error of the PV"),
+            NTupleVariable("pvZerrPos", lambda ev: ev.goodVertices[0].zError() if len(ev.goodVertices)>0 else ev.vertices[0].zError(), help="Z position error of the PV"),
+
+
+
+
+
 #            #A = selectedLeptons[0], B = selectedLeptons[1], C = selectedLeptons[2], D = selectedLeptons[3] 
 #            ##Variables related to IP
 #            #Of one lepton w.r.t. the PV of the event
