@@ -1,0 +1,20 @@
+########## McAnalysis.py
+
+python mcAnalysis.py -P /data1/botta/trees_SOS_010217/ --Fs {P}/0_both3dlooseClean_v2 --mcc susy-sos/lepchoice-recleaner.txt -j 8 -l 35.9 --s2v --tree treeProducerSusyMultilepton /afs/cern.ch/user/i/ipapaver/CMSSW_8_0_25/src/CMGTools/TTHAnalysis/python/plotter/susy-sos/mca-3los-mc.txt /afs/cern.ch/user/i/ipapaver/CMSSW_8_0_25/src/CMGTools/TTHAnalysis/python/plotter/susy-sos/3lep_tight.txt -L susy-sos/functionsSOS.cc
+
+
+
+########### McPlots plotmode norm
+
+python mcPlots.py -P /data1/botta/trees_SOS_010217/ --Fs {P}/0_both3dlooseClean_v2 --mcc susy-sos/lepchoice-recleaner.txt -j 8 -f -l 33.2 --s2v --tree treeProducerSusyMultilepton /afs/cern.ch/user/i/ipapaver/CMSSW_8_0_25/src/CMGTools/TTHAnalysis/python/plotter/susy-sos/mca-3los-mc.txt /afs/cern.ch/user/i/ipapaver/CMSSW_8_0_25/src/CMGTools/TTHAnalysis/python/plotter/susy-sos/3lep_tight.txt -L susy-sos/functionsSOS.cc /afs/cern.ch/user/i/ipapaver/CMSSW_8_0_25/src/CMGTools/TTHAnalysis/python/plotter/susy-sos/3los_plots.txt --pdir /afs/cern.ch/user/i/ipapaver/www/SusySoftTrilepton_nonstack/leoMetMTstudy/TChiWZ_225_205_signal/3lep_norm_preselection_highMET --plotmode norm --xp WG --xp TW --xp WJets --xp DYJets --xp TT --xp T --xp ZZ
+
+
+##########3 Mc Plots stuck
+
+mcPlots.py -P /data1/botta/trees_SOS_010217/ --Fs {P}/0_both3dlooseClean_v2 --mcc susy-sos/lepchoice-recleaner.txt -j 8 -f -l 33.2 --s2v --tree treeProducerSusyMultilepton /afs/cern.ch/user/i/ipapaver/CMSSW_8_0_25/src/CMGTools/TTHAnalysis/python/plotter/susy-sos/mca-3los-mc.txt /afs/cern.ch/user/i/ipapaver/CMSSW_8_0_25/src/CMGTools/TTHAnalysis/python/plotter/susy-sos/3lep_tight.txt -L susy-sos/functionsSOS.cc /afs/cern.ch/user/i/ipapaver/CMSSW_8_0_25/src/CMGTools/TTHAnalysis/python/plotter/susy-sos/3los_plots.txt --pdir /afs/cern.ch/user/i/ipapaver/www/SusySoftTrilepton_nonstack/leoMetMTstudy/TChiWZ_225_205_signal/3lep_stuck_preselection_highMET --sP met
+
+
+
+########## NO IP clean friend trees
+
+mcPlots.py -P /data1/botta/trees_SOS_010217/ --Fs {P}/0_both3dnoIPClean_v1 --mcc susy-sos/lepchoice-recleaner.txt -j 8 -f -l 33.2 --s2v --tree treeProducerSusyMultilepton /afs/cern.ch/user/i/ipapaver/CMSSW_8_0_25/src/CMGTools/TTHAnalysis/python/plotter/susy-sos/mca-3los-mc.txt /afs/cern.ch/user/i/ipapaver/CMSSW_8_0_25/src/CMGTools/TTHAnalysis/python/plotter/susy-sos/3lep_tight.txt -L susy-sos/functionsSOS.cc /afs/cern.ch/user/i/ipapaver/CMSSW_8_0_25/src/CMGTools/TTHAnalysis/python/plotter/susy-sos/3los_plots.txt --pdir /afs/cern.ch/user/i/ipapaver/www/SusySoftTrilepton_nonstack/leoMetMTstudy/TChiWZ_225_205_signal_IPclean/3lep_stuck_preselection_lowMET
