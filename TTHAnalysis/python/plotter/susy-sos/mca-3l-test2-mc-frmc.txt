@@ -1,6 +1,6 @@
 #---- SUSY signal points from new Scan
 
-TChiWZ_225_dM20+  :  TChiWZ_225_205  : 0.001*0.1*1165.09 : bTagWeightFS*(triggereff_3l(LepGood1_pt,LepGood1_eta, LepGood2_pt, LepGood2_eta, LepGood3_pt, LepGood3_eta, met_pt, metmmm_pt(LepGood1_pt, LepGood1_phi, LepGood2_pt, LepGood2_phi,LepGood3_pt,LepGood3_phi, met_pt, met_phi, lepton_Id_selection(LepGood1_pdgId, LepGood2_pdgId, LepGood3_pdgId)), lepton_permut( LepGood1_pdgId, LepGood2_pdgId, LepGood3_pdgId)))/(triggerSF_3l(LepGood1_pt,LepGood1_eta, LepGood2_pt, LepGood2_eta, LepGood3_pt, LepGood3_eta, met_pt, metmmm_pt(LepGood1_pt, LepGood1_phi, LepGood2_pt, LepGood2_phi,LepGood3_pt,LepGood3_phi, met_pt, met_phi, lepton_Id_selection(LepGood1_pdgId, LepGood2_pdgId, LepGood3_pdgId)), lepton_permut( LepGood1_pdgId, LepGood2_pdgId, LepGood3_pdgId)))*(LepGood1_mcMatchId!=0 && LepGood2_mcMatchId!=0 && LepGood3_mcMatchId!=0 && Sum$(abs(Jet_eta)<2.5 && Jet_chHEF<0.1  && Jet_mcPt<8)==0) ;FillColor=ROOT.kRed+1, Label="TChi225/20",Friends=[('sf/t'\,'{P}/0_eventBTagWeightFS_v1/evVarFriend_{cname}.root')], isFastSim 
+#TChiWZ_225_dM20+  :  TChiWZ_225_205  : 0.001*0.1*1165.09 : bTagWeightFS*(triggereff_3l(LepGood1_pt,LepGood1_eta, LepGood2_pt, LepGood2_eta, LepGood3_pt, LepGood3_eta, met_pt, metmmm_pt(LepGood1_pt, LepGood1_phi, LepGood2_pt, LepGood2_phi,LepGood3_pt,LepGood3_phi, met_pt, met_phi, lepton_Id_selection(LepGood1_pdgId, LepGood2_pdgId, LepGood3_pdgId)), lepton_permut( LepGood1_pdgId, LepGood2_pdgId, LepGood3_pdgId)))/(triggerSF_3l(LepGood1_pt,LepGood1_eta, LepGood2_pt, LepGood2_eta, LepGood3_pt, LepGood3_eta, met_pt, metmmm_pt(LepGood1_pt, LepGood1_phi, LepGood2_pt, LepGood2_phi,LepGood3_pt,LepGood3_phi, met_pt, met_phi, lepton_Id_selection(LepGood1_pdgId, LepGood2_pdgId, LepGood3_pdgId)), lepton_permut( LepGood1_pdgId, LepGood2_pdgId, LepGood3_pdgId)))*(LepGood1_mcMatchId!=0 && LepGood2_mcMatchId!=0 && LepGood3_mcMatchId!=0 && Sum$(abs(Jet_eta)<2.5 && Jet_chHEF<0.1  && Jet_mcPt<8)==0) ;FillColor=ROOT.kRed+1, Label="TChi225/20",Friends=[('sf/t'\,'{P}/0_eventBTagWeightFS_v1/evVarFriend_{cname}.root')], isFastSim 
  
 
 
@@ -17,7 +17,7 @@ TChiWZ_225_dM20+  :  TChiWZ_225_205  : 0.001*0.1*1165.09 : bTagWeightFS*(trigger
 
 # ---- Diboson - Including internal conversions (VV* mll<4 GeV)
 
-WG   : WGToLNuG_amcatanlo_ext : LepGood1_mcMatchId!=0 && LepGood2_mcMatchId!=0 && LepGood3_mcMatchId!=0 ; Label="WG", FillColor=ROOT.kViolet+10
+WG   : WGToLNuG_amcatnlo_ext : LepGood1_mcMatchId!=0 && LepGood2_mcMatchId!=0 && LepGood3_mcMatchId!=0 ; Label="WG", FillColor=ROOT.kViolet+10
 WZ   : WZTo3LNu: xsec: LepGood1_mcMatchId!=0 && LepGood2_mcMatchId!=0 && LepGood3_mcMatchId!=0 ; Label="WZ", FillColor=ROOT.kViolet-4
 ZZ   : ZZTo4L: xsec: LepGood1_mcMatchId!=0 && LepGood2_mcMatchId!=0 && LepGood3_mcMatchId!=0  ; Label="ZZ", FillColor=ROOT.kCyan+4
 
@@ -58,7 +58,11 @@ fakes_mc : DYJetsToLL_M50_HT1200to2500 :  xsec: LepGood1_mcMatchId==0 || LepGood
 fakes_mc : DYJetsToLL_M50_HT2500toInf :  xsec: LepGood1_mcMatchId==0 || LepGood2_mcMatchId==0 || LepGood3_mcMatchId==0;   FakeRate="susy-sos/fakeRate-3lNP-frmc-qcd.txt", Label="Fakes", FillColor=ROOT.kCyan-8
 
 # ----  QCD-FR TT
-fakes_mc  : TTJets_DiLepton+TTJets_DiLepton_ext: xsec: LepGood1_mcMatchId==0 || LepGood2_mcMatchId==0 || LepGood3_mcMatchId==0; FakeRate="susy-sos/fakeRate-3lNP-frmc-qcd.txt", FillColor=ROOT.kCyan-8, Label="Fakes"
+fakes_mc  : TTJets_DiLepton_part1+TTJets_DiLepton_part2+TTJets_DiLepton_ext_part1+TTJets_DiLepton_ext_part2+TTJets_DiLepton_ext_part3+TTJets_DiLepton_ext_part4+TTJets_DiLepton_ext_part5: xsec: LepGood1_mcMatchId==0 || LepGood2_mcMatchId==0 || LepGood3_mcMatchId==0; FakeRate="susy-sos/fakeRate-3lNP-frmc-qcd.txt", FillColor=ROOT.kCyan-8, Label="Fakes"
+
+#fakes_mc  : TTJets_DiLepton+TTJets_DiLepton_ext: xsec: LepGood1_mcMatchId==0 || LepGood2_mcMatchId==0 || LepGood3_mcMatchId==0; FakeRate="susy-sos/fakeRate-3lNP-frmc-qcd.txt", FillColor=ROOT.kCyan-8, Label="Fakes"
+
+
 fakes_mc : T_tWch_ext :  xsec: LepGood1_mcMatchId==0 || LepGood2_mcMatchId==0 || LepGood3_mcMatchId==0; FakeRate="susy-sos/fakeRate-3lNP-frmc-qcd.txt", Label="Fakes", FillColor=ROOT.kCyan-8
 fakes_mc  : TBar_tWch_ext :  xsec: LepGood1_mcMatchId==0 || LepGood2_mcMatchId==0 || LepGood2_mcMatchId==0; FakeRate="susy-sos/fakeRate-3lNP-frmc-qcd.txt", Label="Fakes", FillColor=ROOT.kCyan-8
 
@@ -80,8 +84,8 @@ fakes_mc  : TBar_tWch_ext :  xsec: LepGood1_mcMatchId==0 || LepGood2_mcMatchId==
 # ---- External Conversions:
 
 # Convs  : TTGJets : xsec : ((LepGood1_mcMatchId==0 && LepGood1_mcPromptGamma==1) || (LepGood2_mcMatchId==0 && LepGood2_mcPromptGamma==1)) || (LepGood3_mcMatchId==0 && LepGood3_mcPromptGamma==1)) ; Label="Conv", FillColor=ROOT.kOrange
-# Convs  : WGToLNuG_amcatanlo_ext : xsec : ((LepGood1_mcMatchId==0 && LepGood1_mcPromptGamma==1) || (LepGood2_mcMatchId==0 && LepGood2_mcPromptGamma==1)) || (LepGood3_mcMatchId==0 && LepGood3_mcPromptGamma==1)) ; Label="Conv", FillColor=ROOT.kOrange
-# Convs  : ZGTo2LG_ext : xsec : ((LepGood1_mcMatchId==0 && LepGood1_mcPromptGamma==1) || (LepGood2_mcMatchId==0 && LepGood2_mcPromptGamma==1)) || (LepGood3_mcMatchId==0 && LepGood3_mcPromptGamma==1)) ; Label="Conv", FillColor=ROOT.kOrange
+#Convs  : WGToLNuG_amcatnlo_ext : xsec : ((LepGood1_mcMatchId==0 && LepGood1_mcPromptGamma==1) || (LepGood2_mcMatchId==0 && LepGood2_mcPromptGamma==1)) || ((LepGood3_mcMatchId==0 && LepGood3_mcPromptGamma==1)) ; Label="Conv", FillColor=ROOT.kOrange
+# Convs  : ZGTo2LG_ext : xsec : ((LepGood1_mcMatchId==0 && LepGood1_mcPromptGamma==1) || (LepGood2_mcMatchId==0 && LepGood2_mcPromptGamma==1)) ||( (LepGood3_mcMatchId==0 && LepGood3_mcPromptGamma==1)) ; Label="Conv", FillColor=ROOT.kOrange
 # Convs  : TGJets : xsec : ((LepGood1_mcMatchId==0 && LepGood1_mcPromptGamma==1) || (LepGood2_mcMatchId==0 && LepGood2_mcPromptGamma==1)) || (LepGood3_mcMatchId==0 && LepGood3_mcPromptGamma==1)) ; Label="Conv", FillColor=ROOT.kOrange
 
 #---- Rare:
