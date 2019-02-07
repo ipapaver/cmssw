@@ -85,6 +85,7 @@ class JetAnalyzer( Analyzer ):
         dataGT = cfg_ana.dataGT if hasattr(cfg_ana,'dataGT') else [[-1,"GR_70_V2_AN1"]]
         self.shiftJEC = self.cfg_ana.shiftJEC if hasattr(self.cfg_ana, 'shiftJEC') else 0
         self.recalibrateJets = self.cfg_ana.recalibrateJets
+        self.runFixMET2017EE = self.cfg_ana.runFixMET2017EE if hasattr(self.cfg_ana, 'runFixMET2017EE') else 0
         self.jetPtOrUpOrDnSelection = getattr(self.cfg_ana,'jetPtOrUpOrDnSelection',False)
         self.addJECShifts = getattr(self.cfg_ana, 'addJECShifts',False) or self.jetPtOrUpOrDnSelection
         if   self.recalibrateJets == "MC"  : self.recalibrateJets =     self.cfg_comp.isMC
@@ -103,7 +104,8 @@ class JetAnalyzer( Analyzer ):
           if type(GTs) == str: GTs = [ (-1, GTs) ]
           # Now take care of the optional arguments
           kwargs = { 'calculateSeparateCorrections':calculateSeparateCorrections,
-                     'calculateType1METCorrection' :calculateType1METCorrection, }
+                     'calculateType1METCorrection' :calculateType1METCorrection,
+                    'fixMET2017EE' : self.runFixMET2017EE}
           if kwargs['calculateType1METCorrection']: kwargs['type1METParams'] = cfg_ana.type1METParams
           # instantiate the jet re-calibrator
           self.jetReCalibrators=[]
